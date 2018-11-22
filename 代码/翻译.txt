@@ -1,0 +1,11 @@
+% In this experiment, we use balance split. That is, the labeled data
+% share a similar imbalance ratio to that of unlabeled data.
+
+% Two example data "wdbc" and "heart" are used. BTW: The running time of
+% heart is much less than wdbc.
+
+％在本实验中，我们使用平衡分割。 也就是说，标记数据
+％与未标记数据的不平衡比率相似。
+
+％使用两个示例数据“wdbc”和“heart”。 BTW：运行时间
+％heart比wdbc小得多。
