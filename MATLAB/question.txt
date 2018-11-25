@@ -1,0 +1,59 @@
+﻿1.matlab中的addpath是什么意思？
+addpath
+向搜索路径中添加文件夹全页折叠
+语法
+addpath(folderName1,...,folderNameN)
+addpath(folderName1,...,folderNameN,position)
+addpath(___,'-frozen')
+oldpath = addpath(___)
+说明
+示例
+addpath(folderName1,...,folderNameN) 将指定的文件夹添加到当前 MATLAB® 会话的搜索路径的顶层。
+
+示例
+addpath(folderName1,...,folderNameN,position) 将指定的文件夹添加到 position 指定的搜索路径的最前面或最后面。
+
+示例
+addpath(___,'-frozen') 还会为所添加的文件夹禁用文件夹更改检测。为文件夹禁用文件夹更改检测后，MATLAB 将不会检测从 MATLAB 以外的地方对文件夹所做的更改。
+
+请将此语法与上述语法中的任何参数结合使用。可以按任一顺序指定 '-frozen' 和 position。
+
+示例
+此外，oldpath = addpath(___) 返回在添加指定文件夹之前的路径。
+https://ww2.mathworks.cn/help/matlab/ref/addpath.html
+
+2.pdist
+Pairwise distance between pairs of objects
+Syntax
+D = pdist(X)
+D = pdist(X,distance)
+Description
+D = pdist(X)    计算 X 中各对行向量的相互距离(X是一个m-by-n的矩阵). 这里 D 要特别注意，D 是一个长为m(m–1)/2的行向量.可以这样理解 D 的生成：首先生成一个 X 的距离方阵，由于该方阵是对称的，令对角线上的元素为0，所以取此方阵的下三角元素，按照Matlab中矩阵的按列存储原则，此下三角各元素的索引排列即为(2,1), (3,1), ..., (m,1), (3,2), ..., (m,2), ..., (m,m–1).可以用命令 squareform(D) 将此行向量转换为原距离方阵.(squareform函数是专门干这事的，其逆变换是也是squareform。)
+D = pdist(X,distance)     使用指定的距离.distance可以取下面圆括号中的值，用红色标出！
+Metrics
+Given an m-by-n data matrix X, which is treated as m (1-by-n) row vectors x1, x2, ..., xm, the various distances between the vector xs and xt are defined as follows:
+
+3.floor-向负无穷大方向取整：
+
+ floor  Round towards minus infinity.
+
+    floor(X) rounds the elements of X to the nearest integers
+
+    towards minus infinity.
+
+3.index在matlab中没有特别的含义，既不是关键字也不是matlab自带函数的函数名。
+
+通常用来定义一个数组的下标。
+
+举例如下：
+
+index = 5;   % 对变量index赋值5（matlab中变量的引用前不需要定义）
+a(index) = 0;  % 对向量a的下标为index的元素赋值为0
+function [maxNum, minNum] = index(a, b)  % 定义一个index函数，求最大最小值
+if a > b
+    maxNum = a;
+    minNum = b;
+else
+    maxNum = b;
+    minNum = a;
+end
